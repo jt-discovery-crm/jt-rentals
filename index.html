@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JT Rentals | AC and Washer &amp; Dryer Rentals in San Antonio, TX</title>
+<meta name="description" content="Rent a window AC, portable AC, or washer and dryer set in San Antonio by the day, week, or month. Tested at pickup or delivery. Request availability online or by text.">
+<meta name="theme-color" content="#10262E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2F5F3;
+    --ink: #10262E;
+    --teal: #0A6A86;
+    --sun: #FFC83D;
+    --line: #C9D6D6;
+    --mist: #E3EBEA;
+    --display: "Bricolage Grotesque", "Arial Narrow", Arial, sans-serif;
+    --body: "Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  a { color: var(--teal); }
+  :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+  .wrap { width: min(100% - 2.5rem, 62rem); margin-inline: auto; }
+
+  /* Top bar */
+  .bar { background: var(--ink); color: var(--paper); }
+  .bar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: .75rem; }
+  .brand { font-family: var(--display); font-weight: 800; font-size: 1.25rem; letter-spacing: -.01em; }
+  .bar a.tel { color: var(--paper); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--sun); }
+
+  /* Hero */
+  .hero { padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2rem, 5vw, 3.5rem); }
+  h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2.4rem, 7.5vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -.025em;
+    margin: 0 0 1.25rem;
+    max-width: 16ch;
+  }
+  .lede { font-size: 1.2rem; max-width: 36rem; margin: 0 0 1.75rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .btn {
+    display: inline-block;
+    font: 700 1.05rem/1 var(--body);
+    padding: 1rem 1.4rem;
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--ink);
+    background: transparent;
+  }
+  .btn.primary { background: var(--sun); }
+  .btn.primary:hover { background: #ffd566; }
+  .btn.ghost:hover { background: var(--mist); }
+  .assure { margin: 1.5rem 0 0; font-size: .98rem; max-width: 40rem; }
+
+  /* Rate sheet */
+  .sheet h2, .how h2, .ask h2, .faq h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+    letter-spacing: -.02em;
+    line-height: 1.1;
+    margin: 0 0 1.5rem;
+  }
+  .sheet { padding-block: 1rem 3rem; }
+  .item {
+    display: grid;
+    gap: 1.25rem 2.5rem;
+    padding-block: 1.75rem;
+    border-top: 3px solid var(--ink);
+  }
+  .item:last-child { border-bottom: 3px solid var(--ink); }
+  .item h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: -.015em;
+    line-height: 1.1;
+    margin: 0 0 .5rem;
+  }
+  .item p { margin: 0 0 1rem; max-width: 30rem; }
+  table.rates { border-collapse: collapse; width: 100%; max-width: 26rem; }
+  table.rates th, table.rates td { text-align: left; padding: .45rem 0; border-bottom: 1px solid var(--line); font-weight: 400; }
+  table.rates td { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+  table.rates tr.sub th, table.rates tr.sub td { color: #3B5560; font-size: .97rem; border-bottom: 0; }
+  table.rates tr.sub td { font-weight: 400; }
+  @media (min-width: 46rem) {
+    .item { grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+
+  /* How it works */
+  .how { background: var(--mist); padding-block: 3rem; }
+  .how ol { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; gap: 1.25rem; }
+  .how li { counter-increment: step; padding-left: 3rem; position: relative; max-width: 36rem; }
+  .how li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: -.15rem;
+    width: 2.1rem; height: 2.1rem; border-radius: 50%;
+    background: var(--ink); color: var(--paper);
+    font: 800 1.05rem/2.1rem var(--display);
+    text-align: center;
+  }
+  .how strong { display: block; }
+  @media (min-width: 52rem) {
+    .how ol { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .how li { padding-left: 0; padding-top: 3rem; }
+  }
+
+  /* Form */
+  .ask { padding-block: 3.5rem; }
+  .ask .sub { max-width: 34rem; margin: -.5rem 0 1.75rem; }
+  form { display: grid; gap: 1.1rem; max-width: 36rem; }
+  .row { display: grid; gap: 1.1rem; }
+  @media (min-width: 40rem) { .row.two { grid-template-columns: 1fr 1fr; } }
+  label { display: grid; gap: .35rem; font-weight: 700; }
+  label small { font-weight: 400; color: #3B5560; }
+  input, select, textarea {
+    font: 400 1.05rem/1.3 var(--body);
+    color: var(--ink);
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+    padding: .8rem .85rem;
+    width: 100%;
+  }
+  textarea { min-height: 6.5rem; resize: vertical; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .note { font-size: .95rem; margin: 0; color: #3B5560; }
+  #status { margin: 0; padding: 0; font-weight: 700; }
+  #status.ok { padding: 1rem; background: #DDF2E4; border: 2px solid #1E7A3C; border-radius: 6px; }
+  #status.err { padding: 1rem; background: #FBE3E0; border: 2px solid #B3261E; border-radius: 6px; }
+
+  /* FAQ */
+  .faq { padding-block: 1rem 3.5rem; }
+  details { border-top: 1px solid var(--line); padding-block: 1rem; max-width: 40rem; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; font-weight: 700; font-size: 1.1rem; }
+  details p { margin: .6rem 0 0; }
+
+  footer { background: var(--ink); color: var(--paper); padding-block: 2rem; font-size: .97rem; }
+  footer p { margin: 0 0 .5rem; max-width: 40rem; }
+  footer a { color: var(--sun); }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <span class="brand">JT Rentals</span>
+    <a class="tel" data-tel href="tel:+10000000000">Call or text</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Appliance rentals in San Antonio</h1>
+      <p class="lede">Window and portable air conditioners, plus washer and dryer sets, by the day, week, or month. Every unit is tested with you at pickup or delivery.</p>
+      <div class="actions">
+        <a class="btn primary" data-sms href="sms:+10000000000">Text us your request</a>
+        <a class="btn ghost" href="#request">Check availability</a>
+      </div>
+      <p class="assure">AC out while you wait on a repair? Washer died? Moving between places? Tell us what you need and we'll confirm availability and your total.</p>
+    </div>
+  </section>
+
+  <section class="sheet" id="rates" aria-labelledby="rates-h">
+    <div class="wrap">
+      <h2 id="rates-h">Rates</h2>
+
+      <article class="item">
+        <div>
+          <h3>Window AC</h3>
+          <p>Vissani 6,000 BTU smart window air conditioner with cooling and dehumidifier modes. Cools a room up to about 250 sq. ft. Runs on a standard 115V outlet.</p>
+          <button class="btn ghost" type="button" data-pick="Window AC">Request a window AC</button>
+        </div>
+        <table class="rates">
+          <caption class="hp">Window AC rates</caption>
+          <tr><th scope="row">1 day</th><td>$20</td></tr>
+          <tr><th scope="row">3 days</th><td>$35</td></tr>
+          <tr><th scope="row">1 week</th><td>$55</td></tr>
+          <tr><th scope="row">2 weeks</th><td>$85</td></tr>
+          <tr><th scope="row">1 month</th><td>$125</td></tr>
+          <tr class="sub"><th scope="row">Refundable deposit</th><td>$100</td></tr>
+        </table>
+      </article>
+
+      <article class="item">
+        <div>
+          <h3>Portable AC</h3>
+          <p>Vissani portable air conditioner with window vent kit and exhaust hose. It sits on the floor, so it works when a window unit won't fit. Best for small rooms, bedrooms, and offices.</p>
+          <button class="btn ghost" type="button" data-pick="Portable AC">Request a portable AC</button>
+        </div>
+        <table class="rates">
+          <caption class="hp">Portable AC rates</caption>
+          <tr><th scope="row">1 day</th><td>$25</td></tr>
+          <tr><th scope="row">3 days</th><td>$45</td></tr>
+          <tr><th scope="row">1 week</th><td>$65</td></tr>
+          <tr><th scope="row">2 weeks</th><td>$100</td></tr>
+          <tr><th scope="row">1 month</th><td>$150</td></tr>
+          <tr class="sub"><th scope="row">Refundable deposit</th><td>$150</td></tr>
+        </table>
+      </article>
+
+      <article class="item">
+        <div>
+          <h3>Washer and dryer set</h3>
+          <p>Whirlpool top-load washer (3.5 cu. ft.) and GE electric dryer (5.8 cu. ft.), delivered, hooked up, and tested. Your home needs a 240V dryer outlet, hot and cold water valves, and a drain.</p>
+          <button class="btn ghost" type="button" data-pick="Washer and dryer set">Request a washer and dryer</button>
+        </div>
+        <table class="rates">
+          <caption class="hp">Washer and dryer set rates</caption>
+          <tr><th scope="row">1 week</th><td>$85</td></tr>
+          <tr><th scope="row">2 weeks</th><td>$150</td></tr>
+          <tr><th scope="row">1 month</th><td>$260</td></tr>
+          <tr class="sub"><th scope="row">Delivery and hookup</th><td>from $40</td></tr>
+          <tr class="sub"><th scope="row">Refundable deposit</th><td>$200</td></tr>
+        </table>
+      </article>
+    </div>
+  </section>
+
+  <section class="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <h2 id="how-h">How it works</h2>
+      <ol>
+        <li><strong>Send a request</strong>Tell us what you need, for how long, and where you are in San Antonio.</li>
+        <li><strong>We confirm</strong>We check availability and send your total, including any delivery fee.</li>
+        <li><strong>Sign and test</strong>You sign a short rental agreement, show ID, and we test the unit with you.</li>
+        <li><strong>Return it</strong>Return or schedule pickup on time and get your deposit back after inspection.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ask" id="request" aria-labelledby="ask-h">
+    <div class="wrap">
+      <h2 id="ask-h">Check availability</h2>
+      <p class="sub">Fill this out and we'll reply by text or email with availability and your total. Prefer to text? Use the button at the top of the page.</p>
+
+      <form id="lead" novalidate>
+        <input type="hidden" name="_subject" value="New JT Rentals request">
+        <input type="hidden" name="source" id="source" value="">
+        <div class="hp" aria-hidden="true">
+          <label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="row two">
+          <label>Your name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>Phone
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
+          </label>
+        </div>
+
+        <label>Email <small>(optional)</small>
+          <input type="email" name="email" autocomplete="email">
+        </label>
+
+        <div class="row two">
+          <label>What do you need?
+            <select name="item" id="item" required>
+              <option value="">Choose one</option>
+              <option>Window AC</option>
+              <option>Portable AC</option>
+              <option>Washer and dryer set</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label>Start date
+            <input type="date" name="start_date" id="start_date">
+          </label>
+        </div>
+
+        <div class="row two">
+          <label>How long?
+            <select name="duration">
+              <option value="">Choose one</option>
+              <option>1 day</option>
+              <option>3 days</option>
+              <option>1 week</option>
+              <option>2 weeks</option>
+              <option>1 month</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label>Area or ZIP code
+            <input type="text" name="area" placeholder="Example: 78216" autocomplete="postal-code">
+          </label>
+        </div>
+
+        <label>Anything we should know? <small>(optional)</small>
+          <textarea name="notes" placeholder="Room size and window type for an AC. Electric dryer outlet, water valves, and drain for a washer and dryer."></textarea>
+        </label>
+
+        <button class="btn primary" type="submit" id="send">Send request</button>
+        <p id="status" role="status" aria-live="polite"></p>
+        <p class="note">We only use your details to reply to this request.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <h2 id="faq-h">Questions</h2>
+      <details>
+        <summary>Do I need a deposit?</summary>
+        <p>Yes. Each rental has a refundable security deposit, listed with the rates above. It is returned after the unit is returned on time and inspected.</p>
+      </details>
+      <details>
+        <summary>Do you deliver?</summary>
+        <p>Pickup is available for ACs, and delivery is available for a fee that depends on your area. Washer and dryer sets are delivered and hooked up.</p>
+      </details>
+      <details>
+        <summary>What do I need to bring or sign?</summary>
+        <p>A valid photo ID and a signed rental agreement. We test the unit with you before you take it or before we leave.</p>
+      </details>
+      <details>
+        <summary>Can I extend my rental?</summary>
+        <p>Yes, if the unit is still available. Contact us before your return time and extensions are charged at the current rate.</p>
+      </details>
+      <details>
+        <summary>Which rental fits my room?</summary>
+        <p>The window AC is rated for up to about 250 sq. ft. and needs a window it can sit in. The portable AC suits smaller rooms and windows where a window unit won't fit. Tell us your room size and window type and we'll recommend one.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>JT Rentals</strong>, serving San Antonio, TX.</p>
+    <p>All rentals require a valid ID, a signed rental agreement, and a refundable deposit. Availability is confirmed when you request a rental.</p>
+    <p><a data-tel href="tel:+10000000000">Call or text</a></p>
+  </div>
+</footer>
+
+<script>
+  /* ---- Edit these three values, then you're done ---- */
+  var CONFIG = {
+    phone: "+10000000000",                          // your number, digits only with +1 first
+    phoneLabel: "(000) 000-0000",                   // how it should look on the page
+    formEndpoint: "https://formspree.io/f/YOUR_FORM_ID"  // from formspree.io (free plan)
+  };
+
+  var smsBody = "Hi JT Rentals, I'd like to rent: (AC or washer/dryer). How long: ___. My area in San Antonio: ___.";
+
+  document.querySelectorAll("[data-tel]").forEach(function (a) {
+    a.href = "tel:" + CONFIG.phone;
+    a.textContent = "Call or text " + CONFIG.phoneLabel;
+  });
+  document.querySelectorAll("[data-sms]").forEach(function (a) {
+    a.href = "sms:" + CONFIG.phone + "?&body=" + encodeURIComponent(smsBody);
+  });
+
+  /* Track where each lead came from (use ?utm_source=google on your Google profile link) */
+  var params = new URLSearchParams(window.location.search);
+  var src = params.get("utm_source") || (document.referrer ? new URL(document.referrer).hostname : "direct");
+  document.getElementById("source").value = src;
+
+  /* No past dates */
+  var d = new Date();
+  var iso = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  document.getElementById("start_date").min = iso;
+
+  /* Request buttons preselect the item and jump to the form */
+  document.querySelectorAll("[data-pick]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var sel = document.getElementById("item");
+      sel.value = btn.getAttribute("data-pick");
+      document.getElementById("request").scrollIntoView();
+      sel.focus({ preventScroll: true });
+    });
+  });
+
+  /* Form submit */
+  var form = document.getElementById("lead");
+  var statusEl = document.getElementById("status");
+  var sendBtn = document.getElementById("send");
+
+  function show(msg, cls) {
+    statusEl.textContent = msg;
+    statusEl.className = cls;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = form.name.value.trim();
+    var phone = form.phone.value.trim();
+    if (!name || !phone || !form.item.value) {
+      show("Please add your name, phone number, and what you need.", "err");
+      return;
+    }
+    if (CONFIG.formEndpoint.indexOf("YOUR_FORM_ID") !== -1) {
+      show("The form isn't connected yet. Text us instead using the button at the top.", "err");
+      return;
+    }
+    sendBtn.disabled = true;
+    sendBtn.textContent = "Sending...";
+    fetch(CONFIG.formEndpoint, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    }).then(function (res) {
+      if (res.ok) {
+        form.reset();
+        show("Request sent. We'll text or email you with availability and your total.", "ok");
+      } else {
+        show("Something went wrong sending your request. Please text us instead.", "err");
+      }
+    }).catch(function () {
+      show("We couldn't send your request. Check your connection or text us instead.", "err");
+    }).finally(function () {
+      sendBtn.disabled = false;
+      sendBtn.textContent = "Send request";
+    });
+  });
+</script>
+</body>
+</html>
